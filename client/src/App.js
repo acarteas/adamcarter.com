@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {ArrayIndexSelect, ArrayValueSelect} from './components/Selects.js';
+import DataTable from './components/DataTable.js'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -81,28 +85,18 @@ class Calendar extends Component{
       const calendar = this.state.calendar;
       return(
       <div>
-         <select value={selectedMonth} onChange={this.updateMonth}>
-            {MONTHS.map( (month,index) =>
-               <option key={index} value={index}>{month}</option>
-            )}
-         </select>
-         <select value={selectedYear} onChange={this.updateYear}>
-            {years.map( (year) =>
-               <option key={year} value={year}>{year}</option>
-            )}
-         </select>
+         <ArrayIndexSelect 
+            data={MONTHS}
+            selectedValue={selectedMonth}
+            onChange={this.updateMonth}
+         />
+         <ArrayValueSelect 
+            data={years}
+            selectedValue={selectedYear}
+            onChange={this.updateYear}
+         />
          <div>
-            <table>
-               <tbody>
-                  {calendar.map( (row, index) =>
-                     <tr key={index}>
-                        {row.map((cell, sub_index) =>
-                        <td key={sub_index}>{cell}</td>
-                           )}
-                     </tr>
-                  )}
-               </tbody>   
-            </table>
+         <DataTable data={calendar} />
          </div>
       </div>
       );
@@ -113,10 +107,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Calendar />
+      <Router>
+         <div>
+            <nav>
+               <Link to="/calendar_generator">Calendar Generator</Link>
+            </nav>
+            <Route path="/calendar_generator" component={CalendarComponent} />
+         </div>
+      </Router>
       </div>
     );
   }
 }
+
+const CalendarComponent = () =>(
+   <div>
+      <h1>Calendar Generator</h1>
+      <Calendar />
+   </div>
+);
 
 export default App;
