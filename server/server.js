@@ -1,5 +1,9 @@
 // server.js
-//following https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4 
+
+//tutorials:
+//express: https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4 
+//sqlite3: http://www.sqlitetutorial.net/sqlite-nodejs/
+
 // BASE SETUP
 // =============================================================================
 
@@ -7,6 +11,7 @@
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
+const sqlite3 = require('sqlite3').verbose();
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -15,6 +20,13 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;        // set our port
 
+//set up DB
+let db = new sqlite3.Database('./adamcarter_com_db.db3', sqlite3.OPEN_READWRITE, (err) => {
+   if (err) {
+     console.error(err.message);
+   }
+ });
+
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
@@ -22,6 +34,34 @@ var router = express.Router();              // get an instance of the express Ro
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
+});
+
+router.get('/fields/:id', (req, res) =>{
+   let sql = "SELECT * FROM fields WHERE field_name = ?";
+   let result = db.get(sql, [req.params.id], (err, row) => {
+      res.json({data: row});
+   });
+});
+
+router.get('/education', (req, res) =>{
+   let sql = "SELECT * FROM education ORDER BY graduation_year DESC";
+   let result = db.all(sql, [], (err, rows) => {
+      res.json({data: rows});
+   });
+});
+
+router.get('/expertise', (req, res) =>{
+   let sql = "SELECT * FROM expertise ORDER BY rating DESC";
+   let result = db.all(sql, [], (err, rows) => {
+      res.json({data: rows});
+   });
+});
+
+router.get('/work_history', (req, res) =>{
+   let sql = "SELECT * FROM work_history ORDER BY start_date DESC";
+   let result = db.all(sql, [], (err, rows) => {
+      res.json({data: rows});
+   });
 });
 
 // more routes for our API will happen here
