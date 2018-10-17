@@ -64,9 +64,8 @@ class App extends Component {
             </nav>
             <Route path="/calendar_generator" component={CalendarComponent} />
             <Route path="/home" component={HomeComponent} />
-            <Route path="/" render={() => 
+            <Route path="/">
                <Redirect to="/home" />
-            }>
             </Route>
             
          </div>
@@ -77,14 +76,14 @@ class App extends Component {
 }
 
 const CalendarComponent = () =>(
-   <div>
+   <div className="container-fluid">
       <h1>Calendar Generator</h1>
       <Calendar />
    </div>
 );
 
 const HomeComponent = () =>(
-   <div>
+   <div className="container-fluid">
       <Fade>
          <Home />
       </Fade>

@@ -1,3 +1,4 @@
+import '../styles/home.css';
 import React, { Component } from 'react';
 import axios from 'axios';
 class Home extends Component{
@@ -47,19 +48,26 @@ class Home extends Component{
       return(
          <section>
             <article>
-               <img src={picture_self} title="Me!" alt="Me!" />
-               <h1>{name}</h1>
-               <h2>{job_title}</h2>
-               <ul>
-                  <li>{location}</li>
-                  <li>{email_address}</li>
-               </ul>
-               <ul>
-                  <li>Linked In</li>
-                  <li>Github</li>
-               </ul>
-               <h3>About Myself</h3>
-               <div dangerouslySetInnerHTML={{__html: about}}>
+               <div className="row align-items-center">
+                  <div className="col-lg text-center">
+                     <img id="selfPicture" src={picture_self} title="Me!" alt="Me!" />
+                  </div>
+                  <div className="col-lg-4">
+                  <h1>{name}</h1>
+                     <h2>{job_title}</h2>
+                     <ul>
+                        <li>{location}</li>
+                        <li>{email_address}</li>
+                     </ul>
+                     <ul>
+                        <li>Linked In</li>
+                        <li>Github</li>
+                     </ul>
+                  </div>
+               </div>
+               <div className="row">
+                  <h3>About Myself</h3>
+                  <div dangerouslySetInnerHTML={{__html: about}}></div>
                </div>
             </article>
          </section>
