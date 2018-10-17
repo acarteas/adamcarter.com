@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 //import views
 import Calendar from './views/Calendar.js';
@@ -19,6 +19,7 @@ https://getbootstrap.com/docs/4.1/components/navbar/
 
 //react / js stuff
 https://www.robinwieruch.de/local-storage-react/
+https://www.npmjs.com/package/react-reveal
 */
 
 class App extends Component {
@@ -84,7 +85,9 @@ const CalendarComponent = () =>(
 
 const HomeComponent = () =>(
    <div>
-      <Home />
+      <Fade>
+         <Home />
+      </Fade>
    </div>
 );
 
