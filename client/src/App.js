@@ -76,16 +76,20 @@ class App extends Component {
 }
 
 const CalendarComponent = () =>(
-   <div className="container-fluid">
+   <div className="container">
       <h1>Calendar Generator</h1>
       <Calendar />
    </div>
 );
 
 const HomeComponent = () =>(
-   <div className="container-fluid">
+   <div className="container">
       <Fade>
-         <Home />
+         <Home 
+            field_endpoint="http://localhost:8080/api/fields/"
+            education_endpoint="http://localhost:8080/api/education"
+            work_endpoint="http://localhost:8080/api/work_history"
+         />
       </Fade>
    </div>
 );

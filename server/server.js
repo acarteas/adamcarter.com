@@ -57,28 +57,28 @@ router.get('/', function(req, res) {
 router.get('/fields/:id', (req, res) =>{
    let sql = "SELECT * FROM fields WHERE field_name = ?";
    let result = db.get(sql, [req.params.id], (err, row) => {
-      res.json({data: row});
+      res.json({response: row});
    });
 });
 
 router.get('/education', (req, res) =>{
    let sql = "SELECT * FROM education ORDER BY graduation_year DESC";
    let result = db.all(sql, [], (err, rows) => {
-      res.json({data: rows});
+      res.json({response: rows});
    });
 });
 
 router.get('/expertise', (req, res) =>{
    let sql = "SELECT * FROM expertise ORDER BY rating DESC";
    let result = db.all(sql, [], (err, rows) => {
-      res.json({data: rows});
+      res.json({response: rows});
    });
 });
 
 router.get('/work_history', (req, res) =>{
    let sql = "SELECT * FROM work_history ORDER BY start_date DESC";
    let result = db.all(sql, [], (err, rows) => {
-      res.json({data: rows});
+      res.json({response: rows});
    });
 });
 
