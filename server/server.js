@@ -82,6 +82,13 @@ router.get('/work_history', (req, res) =>{
    });
 });
 
+router.get('/publications', (req, res) =>{
+   let sql = "SELECT * FROM publications ORDER BY sort_order, year DESC";
+   let result = db.all(sql, [], (err, rows) => {
+      res.json({response: rows});
+   });
+});
+
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------

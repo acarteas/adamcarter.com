@@ -1,0 +1,22 @@
+.pubSection h1{
+   font-size: 1.2rem;
+   margin-top: 1rem;
+}
+
+.pubList{
+   list-style:none;
+   padding:0;
+   margin:0;
+}
+
+.pubList li{
+   padding:.6rem;
+}
+
+.listColor1{
+   background-color: #EFEFEF;
+}
+
+.listolor2{
+   background-color: #FFFFFF;
+}

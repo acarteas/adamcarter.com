@@ -6,12 +6,22 @@ import Fade from 'react-reveal/Fade';
 //import views
 import Calendar from './views/Calendar.js';
 import Home from './views/Home.js';
+import Publications from './views/Publications.js';
+
+//fonts
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faHome } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fab, faEnvelope, faHome)
 
 /*
 Things to look at / remember
 
 //fonts and styles
 https://fontawesome.com/free
+https://fontawesome.com/how-to-use/on-the-web/using-with/react
+https://www.npmjs.com/package/@fortawesome/react-fontawesome#usage
 
 //bootstrap
 https://blog.logrocket.com/how-to-use-bootstrap-with-react-a354715d1121
@@ -20,6 +30,10 @@ https://getbootstrap.com/docs/4.1/components/navbar/
 //react / js stuff
 https://www.robinwieruch.de/local-storage-react/
 https://www.npmjs.com/package/react-reveal
+
+<Route path="/">
+   <Redirect to="/home" />
+</Route>
 */
 
 class App extends Component {
@@ -46,6 +60,9 @@ class App extends Component {
                         <li className="nav-item">
                            <Link to="/home" className="nav-link">Home</Link>
                         </li>
+                        <li className="nav-item">
+                           <Link to="/publications" className="nav-link">Publications</Link>
+                        </li>
                         <li className="nav-item dropdown">
                            <a className="nav-link dropdown-toggle" 
                               href="#top" id="navbarDropdown" 
@@ -64,9 +81,7 @@ class App extends Component {
             </nav>
             <Route path="/calendar_generator" component={CalendarComponent} />
             <Route path="/home" component={HomeComponent} />
-            <Route path="/">
-               <Redirect to="/home" />
-            </Route>
+            <Route path="/publications" component={PublicationsComponent} />
             
          </div>
       </Router>
@@ -91,6 +106,14 @@ const HomeComponent = () =>(
             work_endpoint="http://localhost:8080/api/work_history"
          />
       </Fade>
+   </div>
+);
+
+const PublicationsComponent = () =>(
+   <div className="container">
+   <Fade>
+      <Publications publications_endpoint="http://localhost:8080/api/publications" />
+   </Fade>
    </div>
 );
 
