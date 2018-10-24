@@ -15,9 +15,9 @@ class DateList extends Component{
                      </h4>
                   </div>
                   <div className="col-sm">
-                  <h1>{data[h1_key]}</h1>
-                     <h2>{data[h2_key]}</h2>
-                     <h3>{data[h3_key]}</h3>
+                  <h1>{item[h1_key]}</h1>
+                     <h2>{item[h2_key]}</h2>
+                     <h3>{item[h3_key]}</h3>
                      <p>
                         {item[details_key]}
                      </p>

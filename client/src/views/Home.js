@@ -2,6 +2,7 @@ import '../styles/home.css';
 import React, { Component } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DateList from './components/DateList.js';
 
 class Home extends Component{
    constructor(props){
@@ -42,7 +43,12 @@ class Home extends Component{
                const start_date = new Date(item.start_date);
                const end_date = new Date(item.end_date);
                let date_range = start_date.getFullYear();
-               date_range += (item.end_date === null ? "present" : end_date.getFullYear());
+               if(item.end_date === null){
+                  date_range += " - present";
+               }
+               else{
+                  date_range += " - " + end_date.getFullYear();
+               }
                item.date_range = date_range;
             }
             this.setState({work_history: result.data.response});
@@ -116,53 +122,28 @@ class Home extends Component{
                      </div>
                   </div>
             </article>
-            <article className="row">
-               <div className="col">
-                  <h1>Employment</h1>
-                  <ul>
-                  {work_history.map(item => {
-                     const start_date = new Date(item.start_date);
-                     const end_date = new Date(item.end_date);
-                     return(
-                     <li key={item.id} className="workItem row">
-                     <div className="col-sm-3 align-self-start">
-                        <h4>
-                        {start_date.getFullYear()} - {item.end_date === null ? "present" : end_date.getFullYear()}
-                        </h4>
-                     </div>
-                     <div className="col-sm">
-                     <h1>{item.business_name}</h1>
-                        <h2>{item.job_title}</h2>
-                        <h3>{item.location}</h3>
-                        <p>
-                           {item.job_description}
-                        </p>
-                     </div>
-                     </li>
-                     )
-                  })}
-                  </ul>
+            <article className="row personalBackground">
+               <div className="col-md">
+                  <h1 className="backgroundTitle">Employment</h1>
+                  <DateList 
+                     data = {work_history}
+                     date_key = "date_range"
+                     h1_key = "business_name"
+                     h2_key = "job_title"
+                     h3_key = "location"
+                     details_key = "job_description"
+                  />
                </div>
-               <div className="col">
-                  <h1>Education</h1>
-                  <ul>
-                  {education_history.map(item => {
-                     return(
-                     <li key={item.id} className="workItem row">
-                     <div className="col-sm-2 align-self-start">
-                        <h4>
-                        {item.graduation_year}
-                        </h4>
-                     </div>
-                     <div className="col-sm">
-                     <h1>{item.school_name}</h1>
-                        <h2>{item.major}</h2>
-                        <h3>{item.location}</h3>
-                     </div>
-                     </li>
-                     )
-                  })}
-                  </ul>
+               <div className="col-md">
+                  <h1 className="backgroundTitle">Education</h1>
+                  <DateList 
+                     data = {education_history}
+                     date_key = "graduation_year"
+                     h1_key = "school_name"
+                     h2_key = "major"
+                     h3_key = "location"
+                     details_key = "description"
+                  />
                </div>
             </article>
          </section>
