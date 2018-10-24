@@ -48,25 +48,6 @@
       margin-right: auto;
    }
    
-   .faIcon{
-      color:inherit;
-   }
-   
-   .faIcon:visited{
-      color: inherit;
-   }
-   
-   .faIcon:hover{
-      color: #2D77FF;
-   }
-   
-   .faLinks{
-      list-style: none;
-      padding:0;
-      margin:0;
-      margin-bottom: 1rem;
-   }
-   
    .workItem h1{
       font-size: 1.2rem;
    }
@@ -86,4 +67,23 @@
 
 .backgroundTitle{
    font-size:1.5rem;
+}
+
+.faIcon{
+  color:inherit;
+}
+
+.faIcon:visited{
+  color: inherit;
+}
+
+.faIcon:hover{
+  color: #2D77FF;
+}
+
+.faLinks{
+  list-style: none;
+  padding:0;
+  margin:0;
+  margin-bottom: 1rem;
 }
