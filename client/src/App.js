@@ -101,9 +101,9 @@ const HomeComponent = () =>(
    <div className="container">
       <Fade>
          <Home 
-            field_endpoint="http://adamcarter.com/api/fields/"
-            education_endpoint="http://adamcarter.com/api/education"
-            work_endpoint="http://adamcarter.com/api/work_history"
+            field_endpoint="http://localhost:8080/api/fields/"
+            education_endpoint="http://localhost:8080/api/education"
+            work_endpoint="http://localhost:8080/api/work_history"
          />
       </Fade>
    </div>
@@ -112,7 +112,7 @@ const HomeComponent = () =>(
 const PublicationsComponent = () =>(
    <div className="container">
    <Fade>
-      <Publications publications_endpoint="http://adamcarter.com/api/publications" />
+      <Publications publications_endpoint="http://localhost:8080/api/publications" />
    </Fade>
    </div>
 );

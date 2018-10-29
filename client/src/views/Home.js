@@ -88,7 +88,7 @@ class Home extends Component{
          <section>
             <article className="row">
                   <div className="col-lg align-self-start">
-                     <img id="selfPicture" className="img-fluid" src={picture_self} title="Me!" alt="Me!" />
+                     <img className="img-fluid" src={picture_self} title="Me!" alt="Me!" />      
                   </div>
                   <div className="col-lg container-full">
                      <div className="row">
