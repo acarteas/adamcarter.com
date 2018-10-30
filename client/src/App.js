@@ -7,6 +7,7 @@ import Fade from 'react-reveal/Fade';
 import Calendar from './views/Calendar.js';
 import Home from './views/Home.js';
 import Publications from './views/Publications.js';
+import Projects from './views/Projects.js';
 
 //fonts
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -82,6 +83,7 @@ class App extends Component {
             <Route path="/calendar_generator" component={CalendarComponent} />
             <Route path="/home" component={HomeComponent} />
             <Route path="/publications" component={PublicationsComponent} />
+            <Route path="/projects/:name" component={ProjectsComponent} />
             <Route exact path="/" component={HomeComponent} />
          </div>
       </Router>
@@ -116,5 +118,17 @@ const PublicationsComponent = () =>(
    </Fade>
    </div>
 );
+
+function ProjectsComponent({match}){
+   return(
+      <div className="container">
+      <Fade>
+         <Projects projects_endpoint="http://localhost:8080/api/projects/"
+                   project_name={match.params.name}
+          />
+      </Fade>
+      </div>
+   );
+}
 
 export default App;

@@ -12,6 +12,12 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
+const fs = require('fs');
+
+const settings = {
+   data_dir: '../data/',
+   projects_dir: '../data/projects/',
+};
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -21,7 +27,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;        // set our port
 
 //set up DB
-let db = new sqlite3.Database('./adamcarter_com_db.db3', sqlite3.OPEN_READWRITE, (err) => {
+let db = new sqlite3.Database( settings.data_dir + 'adamcarter_com_db.db3', sqlite3.OPEN_READWRITE, (err) => {
    if (err) {
      console.error(err.message);
    }
@@ -31,7 +37,7 @@ let db = new sqlite3.Database('./adamcarter_com_db.db3', sqlite3.OPEN_READWRITE,
  app.use((req, res, next) => {
    const origin = req.get('origin');
  
-   // TODO Add origin validation
+   // Add origin validation
    res.header('Access-Control-Allow-Origin', origin);
    res.header('Access-Control-Allow-Credentials', true);
    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -89,6 +95,18 @@ router.get('/publications', (req, res) =>{
    });
 });
 
+router.get('/projects/:name', (req, res) =>{
+   const project_name = req.params.name;
+   const project_path = settings.projects_dir + project_name + ".md";
+   fs.readFile(project_path, {encoding: "utf8"}, (err, data) =>{
+      let file_data = data;
+      if(err){
+         file_data = "error loading " + project_name;
+      }
+      res.json({response: file_data});
+   });
+});
+
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
@@ -98,5 +116,5 @@ app.use('/api', router);
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('Server running on port ' + port);
 
