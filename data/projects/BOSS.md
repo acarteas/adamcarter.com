@@ -4,6 +4,10 @@ In the summer of 2006, I once again worked under contract for the Bethel School 
 
 Determined to build upon the knowledge learned at CWU and to not make previous mistakes made in the IMS, I had high ambitions for the BOSS system.  Probably the most interesting thing about the program is that there are absolutely no page refreshes.  To accomplish this feat, I created what I called the "Page Loader" that fetches dynamic pages through various AJAX calls.  Additionally, by using an early revision of the Zend Framework, I was able to successfully separate my DB and presentation logic in a 2.5-layer system (some business logic is missing, hence the 2.5 layers).
 
-In the end, BOSS became a mixed bag as far as design and quality.  Its 2.5-layer architecture lends to its modularity, which I'm particularly proud of.  However, I feel that my "Page Loader" system, with its lack of page refreshes, increases the difficulty of coding the front-end.
-
-Overall, BOSS is leaps and bounds above the quality of the IMS.  However, being the perfectionist that I am, I can't help but not be satisfied.  The BOSS system was put into production in late 2006. By late 2007, BOSS was quite robust and included a few additional features.  However, due to some key personnel departures at Bethel, BOSS was put on indefinite hold in September 2007.  The BOSS system runs on Linux, utilizing Apache 2.0, MySQL 5.0, and PHP 5.2.
+## Technology
+* Linux
+* Apache 2.0
+* MySQL 5.0
+* PHP 5.2
+* Zend Framework v1
+* JavaScript (vanilla, PrototypeJS, Scriptaculous)

@@ -10,4 +10,10 @@ Working for the CEC also taught me to work within design standard template.  All
 
 Overall, I was pretty proud of what I accomplished at the Civic Engagement Center.  For the most part, the code is well written, and is separated into logical chunks. While the PHP code is nice and easy, the database logic and design is a little more cumbersome.  The form generation logic present in both my BOSS and CEC projects is a double-edged sword.  On one side, the technique significantly reduced the time it takes to create new forms and modify old ones.  It also almost completely eliminates the need for validation and saving to the database (the form generator takes care of that). However, with this power comes an increase in database complexity: gains in ease of creation resulted in uneasy data access and retrieval.  This wasn't a problem for me, but I did worry about handing it over to the next generation of student employees. 
 
-The Civic Engagement Center's website ran on a custom-built Linux machine running Apache 2.2.3, PHP 5.2, and MySQL 5.0.
+## Technology
+* Linux
+* Apache 2.2.3
+* MySQL 5.0
+* PHP 5.2
+* Zend Framework v1
+* JavaScript (Vanilla, PrototypeJS, Scriptaculous)

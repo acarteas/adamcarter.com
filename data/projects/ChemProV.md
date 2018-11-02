@@ -10,5 +10,12 @@ Given that Chris' other research project (OSBLE) centered around facilitating as
 
 While Silverlight ended up being a bit of a dead-end technology-wise, it did introduce me to "modern" Windows GUI development using XAML and LINQ.  In addition, we were able to get several papers out of the project and presented the technology at several workshops.  Looking back at my programming history, ChemProV represents an important turning point in my ability to construct well-designed systems.
 
-ChemProV version 1 was written in Java using the Eclipse Framework
-The final version of ChemProV 2.0 was written in C# Silverlight 5.0 / .Net 4.0.
+## Technology
+### Version 1
+* Java 8
+* Eclipse Framework
+
+### Version 2
+* Silverlight 5.0
+* C# / .NET 4.0
+* IIS 7

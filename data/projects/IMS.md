@@ -4,4 +4,10 @@ The Instruction Management System (IMS) was one of the first web-based applicati
 
 Being the first large-scale program that I had ever created, the IMS had several flaws.  Probably the largest issue that I have with the software is its lack of distinct tiers.  Following the path of most PHP newbies, I entangled my data access with the presentation layer.  I later attempted to address this issue in early 2006 with mixed results.
 
-Looking back, the IMS was a good learning experience.  It taught me proper XHTML and CSS, and also the importance of good software design.  The IMS was later redesigned by Scott Bailey (an excellent programmer) in the fall of 2006.  My version ran on an OSX server, utilizing Apache 1.3, MySQL 4.1 and PHP 4.4.
+Looking back, the IMS was a good learning experience.  It taught me proper XHTML and CSS, and also the importance of good software design.  The IMS was later redesigned by Scott Bailey (an excellent programmer) in the fall of 2006. 
+
+### Technology
+* OSX 10.2 Server
+* Apache 1.3
+* MySQL 4.1
+* PHP 4.4
