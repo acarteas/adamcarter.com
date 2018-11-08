@@ -10,6 +10,10 @@ Given that Chris' other research project (OSBLE) centered around facilitating as
 
 While Silverlight ended up being a bit of a dead-end technology-wise, it did introduce me to "modern" Windows GUI development using XAML and LINQ.  In addition, we were able to get several papers out of the project and presented the technology at several workshops.  Looking back at my programming history, ChemProV represents an important turning point in my ability to construct well-designed systems.
 
+## View Source
+Note: the original source code was located in Microsoft's now-defunct Codeplex.
+[View source on github](https://github.com/WSU-HELPLAB/CHEMPROV)
+
 ## Technology
 ### Version 1
 * Java 8

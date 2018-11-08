@@ -8,6 +8,10 @@ The data collected through OSBIDE allowed us to construct the Programming State 
 
 As a PhD project should, OSBIDE taught me quite a lot.  It represents a high watermark in terms of technical achievement.  OSBIDE consisted of both client and sever technologies and I learned a lot in trying to get the two to efficiently communicate.  I also learned a lot about how to analyze and segment large data sets.  Lastly, I learned a lot about how to conduct and report on research.  While I no longer work on OSBIDE, the ideas and findings that came out of the project continue to inspire grant proposals and future research.
 
+## View Source
+Note: the original source code was located in Microsoft's now-defunct Codeplex.
+[View source on github](https://github.com/acarteas/OSBIDE)
+
 ## Technologies
 * C# / .NET 5
 * Visual Studio SDK

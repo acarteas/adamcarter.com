@@ -64,6 +64,9 @@ class App extends Component {
                         <li className="nav-item">
                            <Link to="/publications" className="nav-link">Publications</Link>
                         </li>
+                        <li className="nav-item">
+                           <Link to="/projects" className="nav-link">Projects</Link>
+                        </li>
                         <li className="nav-item dropdown">
                            <a className="nav-link dropdown-toggle" 
                               href="#top" id="navbarDropdown" 
@@ -83,6 +86,7 @@ class App extends Component {
             <Route path="/calendar_generator" component={CalendarComponent} />
             <Route path="/home" component={HomeComponent} />
             <Route path="/publications" component={PublicationsComponent} />
+            <Route path="/projects" component={ProjectsComponent} />
             <Route path="/projects/:name" component={ProjectsComponent} />
             <Route exact path="/" component={HomeComponent} />
          </div>

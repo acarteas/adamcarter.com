@@ -13,7 +13,11 @@ Between 2009 and 2013, I was involved in nearly every major feature introduced i
 * Developed a file manager for sharing files in OSBIDE
 * Developed class-specific activity feeds for students to pose questions to the class
 
-## Technology 
+## View Source
+Note: the original source code was located in Microsoft's now-defunct Codeplex.
+[View source on github](https://github.com/WSU-HELPLAB/OSBLE)
+
+# Technology 
 ### Versions 1 & 2
 * IIS 6
 * ASP.NET WebForms
