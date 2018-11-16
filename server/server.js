@@ -14,10 +14,8 @@ var bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 
-const settings = {
-   data_dir: '../data/',
-   projects_dir: '../data/projects/',
-};
+const config = require('./config.js');
+var server_config = config.ServerConstants();
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -27,29 +25,32 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;        // set our port
 
 //set up DB
-let db = new sqlite3.Database(settings.data_dir + 'adamcarter_com_db.db3', sqlite3.OPEN_READWRITE, (err) => {
+let db = new sqlite3.Database(server_config.data_dir + 'adamcarter_com_db.db3', sqlite3.OPEN_READWRITE, (err) => {
    if (err) {
       console.error(err.message);
    }
 });
 
-//Allow CORS from react
-app.use((req, res, next) => {
-   const origin = req.get('origin');
-
-   // Add origin validation
-   res.header('Access-Control-Allow-Origin', origin);
-   res.header('Access-Control-Allow-Credentials', true);
-   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control, Pragma');
-
-   // intercept OPTIONS method
-   if (req.method === 'OPTIONS') {
-      res.sendStatus(204);
-   } else {
-      next();
-   }
-});
+//Allow CORS from react (not safe for production)
+if(server_config.mode === "debug"){
+   console.log("running in debug mode.");
+   app.use((req, res, next) => {
+      const origin = req.get('origin');
+   
+      // Add origin validation
+      res.header('Access-Control-Allow-Origin', origin);
+      res.header('Access-Control-Allow-Credentials', true);
+      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control, Pragma');
+   
+      // intercept OPTIONS method
+      if (req.method === 'OPTIONS') {
+         res.sendStatus(204);
+      } else {
+         next();
+      }
+   });
+}
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -107,8 +108,8 @@ router.get('/projects/:name', (req, res) => {
    if (project_name !== "undefined") {
       let sql = "SELECT * FROM projects WHERE keyword = ?"
       let result = db.get(sql, [req.params.name], (err, row) => {
-         if (err === undefined && row !== undefined) {
-            const project_path = settings.projects_dir + row.file_name;
+         if (err === null && row !== undefined) {
+            const project_path = server_config.projects_dir + row.file_name;
             fs.readFile(project_path, { encoding: "utf8" }, (err, data) => {
                let file_data = data;
                if (err) {
