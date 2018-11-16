@@ -1,5 +1,6 @@
 # OSBLE
-[OSBLE](/img/projects/osble_home.jpg)
+![OSBLE](/img/projects/osble_home.png)
+
 From the [Help Lab](http://helplab.org/Projects/OSBLE) website:
 For the past decade, we have been exploring the potential for the studio-based learning (SBL) approach commonly used in architecture and fine arts education to be adapted for computing education. To support SBL, we have been developing the Online Studio-Based Learning Environment (OSBLE), a lightweight course management system with powerful and flexible features to support SBL, including team assignments, iterative peer review, and peer review assessment.
 

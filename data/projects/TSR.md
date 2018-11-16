@@ -1,5 +1,6 @@
 # Technology Service Request System
-[TSR System](/img/projects/cec.jpg)
+![TSR System](/img/projects/tsr.png)
+
 With BOSS' cancellation, I was then assigned to create a new technology service request (TSR) system for the BSD.  At the time, the BSD was using a simple, HTML-based solution intended as a "quick fix" while the "real" system (not mine) was being built.  Unfortunately, the real system was more than a year late, and with the recent personnel shakeups, it was obvious that the real system would never ship.  
 When I entered the scene, the new TSR system was little more than a prototype written in Adobe Flex 2.0 (now Flash Builder).  Prior to this project, I had never used Flex.  I debated whether or not to transition to normal HTML, but in the end, I decided that this project would make a great learning experience.
 

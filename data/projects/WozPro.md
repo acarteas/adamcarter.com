@@ -1,5 +1,4 @@
 # WOZ Pro
-[WOZ Pro](/img/projects/woz_pro.jpg)
 Having freshly graduated from CWU with my BS in Computer Science, I began my graduate tenure in 2007 at the [WSU Help Lab](http://helplab.org) working on WOZ Pro.  My undergraduate advisor had turned me on to HCI and general usability and Christopher Hundhausen, my graduate advisor, thought that WOZ Pro would be a good match for my interests.  While I really like the idea of paper prototyping, we could never really find an appropriate research angle for the software.  After spending about a year on the software, I moved to the ChemProV and OSBLE projects.
 
 From the [Help Lab](http://helplab.org/Projects/WOZPro) website:

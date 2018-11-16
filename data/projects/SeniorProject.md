@@ -1,5 +1,6 @@
 # Senior Project
-[LEAP Online](/img/projects/leap_online.jpg)
+![LEAP Online](/img/projects/leap_online.jpg)
+
 Sandwiched in between development of the BOSS and CEC systems is my senior capstone project: the Learning Environment and Activity Portal (LEAP).  Its purpose was to remotely connect math on-campus tutors with rural students across Eastern Washington.
 
 This project is significant because it is the first somewhat large-scale project that I have completed as part of a team.  Luckily, my team was comprised of people who I liked and generally got along with.  But, that's not to say there wasn't a high-tension fight or two.  
