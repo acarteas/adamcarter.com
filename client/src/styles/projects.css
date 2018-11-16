@@ -1,0 +1,20 @@
+.category{
+   margin-top:3rem;
+}
+.category h1{
+   padding-bottom:7px;
+   border-bottom: 1px solid #DFDFDF;
+}
+
+.project{
+   margin-top: 2rem;
+}
+
+.project h1{
+   font-size: 1.5rem;
+   border-bottom: none;
+}
+
+.noShow{
+   display: none;
+}

@@ -86,7 +86,7 @@ class App extends Component {
             <Route path="/calendar_generator" component={CalendarComponent} />
             <Route path="/home" component={HomeComponent} />
             <Route path="/publications" component={PublicationsComponent} />
-            <Route path="/projects" component={ProjectsComponent} />
+            <Route exact path="/projects" component={ProjectsComponent} />
             <Route path="/projects/:name" component={ProjectsComponent} />
             <Route exact path="/" component={HomeComponent} />
          </div>
