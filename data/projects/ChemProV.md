@@ -1,5 +1,5 @@
 # ChemProV
-[ChemProV](/img/projects/chemprov.jpg)
+![ChemProV](/img/projects/chemprov.png)
 
 From the [Help Lab](http://helplab.org/Projects/ChemProV) website:
 The Chemical Process Visualizer (ChemProV) is an educational software environment that supports the construction of process flow diagrams and corresponding material balance equations. As students work, ChemProV generates dynamic feedback messages that alert students to errors in their diagrams and equations, and provide hints on how the errors can be addressed. 

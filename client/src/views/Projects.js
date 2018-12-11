@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../styles/projects.css';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
+import SessionManager from '../SessionManager.js';
 
 var showdown = require('showdown');
 const classMap = {
@@ -23,6 +23,8 @@ class Projects extends Component{
    constructor(props){
       super(props);
 
+      this.session_manager = new SessionManager();
+
       this.state = {
          project_html: "",
          all_projects: {}
@@ -41,7 +43,7 @@ class Projects extends Component{
 
    fetchAllProjects(){
       const projects_endpoint = this.props.projects_endpoint;
-      axios(projects_endpoint).then(result => 
+      this.session_manager.makeUrlRequest(projects_endpoint, result => 
          {
             //the data comes out flat, we need to make it hierarchical based on sort order
             const data = result.data.response;
@@ -58,8 +60,8 @@ class Projects extends Component{
 
    fetchProject(){
       const projects_endpoint = this.props.projects_endpoint;
-      const fetch_url = projects_endpoint + this.props.project_name;
-      axios(fetch_url).then(result => 
+      const fetch_url = projects_endpoint + "/" + this.props.project_name;
+      this.session_manager.makeUrlRequest(fetch_url, result => 
          {
             let data = result.data.response;
             data = conv.makeHtml(data);

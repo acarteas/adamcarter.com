@@ -14,7 +14,15 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHome } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+
+//System config
+import ConfigManager from './config.js';
+
+//add font-awesome stuff to library
 library.add(fab, faEnvelope, faHome)
+
+//get system config
+var config = ConfigManager.getConfig();
 
 /*
 Things to look at / remember
@@ -107,9 +115,9 @@ const HomeComponent = () =>(
    <div className="container">
       <Fade>
          <Home 
-            field_endpoint="http://localhost:8080/api/fields/"
-            education_endpoint="http://localhost:8080/api/education"
-            work_endpoint="http://localhost:8080/api/work_history"
+            field_endpoint={config.FieldsEndpoint}
+            education_endpoint={config.EducationEndpoint}
+            work_endpoint={config.WorkHistoryEndpoint}
          />
       </Fade>
    </div>
@@ -118,7 +126,7 @@ const HomeComponent = () =>(
 const PublicationsComponent = () =>(
    <div className="container">
    <Fade>
-      <Publications publications_endpoint="http://localhost:8080/api/publications" />
+      <Publications publications_endpoint={config.PublicationsEndpoint} />
    </Fade>
    </div>
 );
@@ -127,7 +135,7 @@ function ProjectsComponent({match}){
    return(
       <div className="container">
       <Fade>
-         <Projects projects_endpoint="http://localhost:8080/api/projects/"
+         <Projects projects_endpoint={config.ProjectsEndpoint}
                    project_name={match.params.name}
           />
       </Fade>

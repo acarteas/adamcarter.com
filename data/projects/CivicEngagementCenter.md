@@ -1,5 +1,5 @@
 # Civic Engagement Center
-[Civic Engagement Center Website](/img/projects/cec.jpg)
+![Civic Engagement Center Website](/img/projects/cec.jpg)
 Late in my junior year at CWU, I was approached by my advisor Dr. Ed Gellenbeck who informed me that the university's Civic Engagement Center was in need of an experienced web developer to transition their aging classic ASP-based site to a new one running PHP.  At first, I was apprehensive as I didn't know if I would have enough time as I was keeping plenty busy doing contract work for Bethel.  
 
 My work for the CEC built upon a lot of what I had learned on Bethel's BOSS project.  Most notably, this included use of the Zend Framework and my custom-built form generation software.  Like BOSS, the CEC has many forms.  The CEC had 5 different user types, each with their own registration form.  In addition, the site in general is form driven: users enter data through various forms, which is then displayed in various formats throughout the site.  Because the CEC shares so much code and structure with BOSS, I often call the site BOSS version 1.5.  Unlike BOSS, the CEC website had 3 distinct application tiers.  All page logic follows a similar path, allowing for easy learning and modification.

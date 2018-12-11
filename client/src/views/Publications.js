@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../styles/publications.css';
+import SessionManager from '../SessionManager.js';
 
 class Publications extends Component{
    constructor(props){
       super(props);
+
+      this.session_manager = new SessionManager();
 
       this.state = {
          publications: {},
@@ -17,7 +19,7 @@ class Publications extends Component{
 
    fetchPublications(){
       const publications_endpoint = this.props.publications_endpoint;
-      axios(publications_endpoint).then(result => 
+      this.session_manager.makeUrlRequest(publications_endpoint, result => 
          {
             //the data comes out flat, we need to make it hierarchical based on sort order
             const data = result.data.response;
